@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start:gateway": "yarn workspace gateway dev",
-    "start:service-1": "yarn workspace service-1 dev"
+    "dev:gateway": "yarn workspace gateway dev",
+    "dev:service-1": "yarn workspace service-1 dev"
   },
   "workspaces": [
     "gateway",
