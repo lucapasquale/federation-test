@@ -1,17 +1,13 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { GraphQLGatewayModule } from '@nestjs/graphql';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     GraphQLGatewayModule.forRoot({
-      server: {
-        tracing: true,
-      },
-      gateway: {
-        serviceList: [
-          { name: 'products', url: 'http://localhost:3000/graphql' },
-        ],
-      },
+      server: { tracing: true },
+      gateway: {},
     }),
   ],
   controllers: [],
