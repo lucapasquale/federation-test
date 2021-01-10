@@ -1,3 +1,4 @@
+# Indica que um Product pode ser obtido desse serviço se você tiver o campo "id"
 type Product @key(fields: "id") {
   id: Int!
   name: String!
