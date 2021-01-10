@@ -1,15 +1,15 @@
-import { Resolver, Query, ObjectType, Field, Int } from '@nestjs/graphql';
+import { Resolver, Query, ObjectType, Field, Int } from '@nestjs/graphql'
 
 @ObjectType()
 export class Product {
   @Field(() => String)
-  id: string;
+  id: string
 
   @Field(() => String)
-  name: string;
+  name: string
 
   @Field(() => Int)
-  price: number;
+  price: number
 }
 
 @Resolver()
@@ -20,6 +20,6 @@ export class ProductResolver {
       id: 'abc',
       name: 'my-product',
       price: 100,
-    };
+    }
   }
 }

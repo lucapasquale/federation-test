@@ -2,10 +2,10 @@
   "private": true,
   "scripts": {
     "dev:gateway": "yarn workspace gateway dev",
-    "dev:service-1": "yarn workspace service-1 dev"
+    "dev:service-products": "yarn workspace service-products dev"
   },
   "workspaces": [
     "gateway",
-    "service-1"
+    "service-products"
   ]
 }
