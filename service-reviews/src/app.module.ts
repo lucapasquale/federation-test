@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { GraphQLFederationModule } from '@nestjs/graphql'
 
+import { ProductsResolvers } from './reviews/products-resolver'
 import { ReviewsResolvers } from './reviews/reviews.resolver'
 
 @Module({
@@ -11,6 +12,6 @@ import { ReviewsResolvers } from './reviews/reviews.resolver'
     }),
   ],
   controllers: [],
-  providers: [ReviewsResolvers],
+  providers: [ReviewsResolvers, ProductsResolvers],
 })
 export class AppModule {}
