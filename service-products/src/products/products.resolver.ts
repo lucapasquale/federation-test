@@ -8,7 +8,7 @@ const PRODUCTS = [
 @Resolver('Product')
 export class ProductsResolvers {
   @Query()
-  productById(@Args('id') id: number) {
+  product(@Args('id') id: number) {
     return PRODUCTS.find((p) => p.id === id)
   }
 }

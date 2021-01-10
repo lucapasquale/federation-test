@@ -5,5 +5,5 @@ type Product {
 }
 
 extend type Query {
-  productById(id: Int!): Product
+  product(id: Int!): Product
 }
