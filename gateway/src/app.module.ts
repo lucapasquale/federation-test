@@ -9,10 +9,14 @@ import { GraphQLGatewayModule } from '@nestjs/graphql'
     GraphQLGatewayModule.forRoot({
       server: { tracing: true },
       gateway: {
-        serviceList: [
-          { name: 'Products', url: 'http://localhost:3001/graphql' },
-          { name: 'Reviews', url: 'http://localhost:3002/graphql' },
-        ],
+        // Pra cada serviço do federation, dar um push no schema do Apollo Studio:
+        // apollo service:push
+        //  --graph=test-federation-1yi0l6
+        //  --key=APOLLO_KEY
+        //  --variant=APOLLO_GRAPH_VARIANT
+        //  --serviceName=products
+        //  --serviceURL=http://localhost:3000/graphql
+        //  --endpoint=http://localhost:3000/graphql
       },
     }),
   ],

@@ -1,7 +1,5 @@
 extend type Product @key(fields: "id") {
   id: Int! @external
-
-  # Adiciona um campo de reviews no type externo
   reviews: [Review!]!
 }
 
