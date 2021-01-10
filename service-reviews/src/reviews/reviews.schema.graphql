@@ -1,0 +1,9 @@
+type Review {
+  id: Int!
+  productId: Int!
+  reviewText: String!
+}
+
+extend type Query {
+  reviews: [Review!]!
+}

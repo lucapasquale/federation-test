@@ -5,9 +5,15 @@ import { GraphQLGatewayModule } from '@nestjs/graphql'
 @Module({
   imports: [
     ConfigModule.forRoot(),
+
     GraphQLGatewayModule.forRoot({
       server: { tracing: true },
-      gateway: {},
+      gateway: {
+        serviceList: [
+          { name: 'Products', url: 'http://localhost:3001/graphql' },
+          { name: 'Reviews', url: 'http://localhost:3002/graphql' },
+        ],
+      },
     }),
   ],
   controllers: [],
