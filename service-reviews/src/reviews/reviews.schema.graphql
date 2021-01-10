@@ -1,7 +1,14 @@
+# Existe um type externo Product, que possui um campo "id" externo
+extend type Product @key(fields: "id") {
+  id: Int! @external
+}
+
 type Review {
   id: Int!
   productId: Int!
   reviewText: String!
+# O type Review agora vai ter um campo resolvendo um Product
+  product: Product!
 }
 
 extend type Query {

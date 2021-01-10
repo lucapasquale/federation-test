@@ -1,4 +1,4 @@
-import { Query, Resolver } from '@nestjs/graphql'
+import { Parent, Query, ResolveField, Resolver } from '@nestjs/graphql'
 
 const REVIEWS = [
   { id: 1, productId: 1, reviewText: 'Muito bom, 2 estrelas' },
@@ -11,5 +11,10 @@ export class ReviewsResolvers {
   @Query()
   reviews() {
     return REVIEWS
+  }
+
+  @ResolveField('product')
+  getProduct(@Parent() review: typeof REVIEWS[number]) {
+    return { __typename: 'Product', id: review.productId }
   }
 }
